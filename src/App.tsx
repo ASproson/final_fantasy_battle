@@ -39,7 +39,10 @@ function App() {
             <div>char4</div>
           </div>
         </div>
-        <div className="flex flex-1 border-2 border-red-500">menu</div>
+        <div className="flex flex-1 justify-between border-2 border-red-500">
+          <div className="border-2 border-yellow-500 w-1/2">enemy menu</div>
+          <div className="border-2 border-green-500 w-full">player menu</div>
+        </div>
       </div>
 
       <div className="flex items-end h-full">
