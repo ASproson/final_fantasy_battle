@@ -24,8 +24,9 @@ function App() {
 
   return (
     <div className="h-screen flex justify-center items-center bg-black text-white p-4">
-      <div className="max-w-6xl border-white border-2 rounded-lg min-w-[525px] w-full h-full ml-2">
-        <div className="flex justify-between">
+      <div className="max-w-6xl border-white border-2 rounded-lg min-w-[570px] w-full h-full ml-2 flex flex-col">
+        <div className="h-[70px] border-2 border-red-500">background</div>
+        <div className="flex justify-between py-2 border-2 border-blue-500 h-[170px]">
           <div className="flex flex-col justify-center">
             <div>enemy1</div>
             <div>enemy2</div>
@@ -38,9 +39,11 @@ function App() {
             <div>char4</div>
           </div>
         </div>
+        <div className="flex flex-1 border-2 border-red-500">menu</div>
       </div>
+
       <div className="flex items-end h-full">
-        <div className="h-full w-[125px] p-1 pt-2">{characters}</div>
+        <div className="h-full w-[75px] p-1 pt-2">{characters}</div>
       </div>
     </div>
   );
