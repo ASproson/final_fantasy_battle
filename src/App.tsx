@@ -1,25 +1,10 @@
-export const characterList = [
-  {
-    name: 'AAAA',
-    hp: 30,
-  },
-  {
-    name: 'BBBB',
-    hp: 25,
-  },
-  {
-    name: 'CCCC',
-    hp: 28,
-  },
-  {
-    name: 'DDDD',
-    hp: 33,
-  },
-];
+import { CharacterSheet } from './components/CharacterSheet';
+import { PlayerMenu } from './components/PlayerMenu';
+import { characterList } from './library/Characters';
 
 function App() {
-  const characters = characterList.map(({ name, hp }, idx) => {
-    return <CharacterSheet key={idx} name={name} hp={hp} />;
+  const characterSheetList = characterList.map(({ name, hp }) => {
+    return <CharacterSheet key={name} name={name} hp={hp} />;
   });
 
   return (
@@ -49,7 +34,7 @@ function App() {
         </div>
 
         <div className="flex items-end h-full">
-          <div className="h-full w-[75px] p-1 pt-2">{characters}</div>
+          <div className="h-full w-[75px] p-1 pt-2">{characterSheetList}</div>
         </div>
       </div>
     </div>
@@ -57,30 +42,3 @@ function App() {
 }
 
 export default App;
-
-interface Character {
-  name: string;
-  hp: number;
-}
-
-export const CharacterSheet = ({ name, hp }: Character) => {
-  return (
-    <div className="p-1 border-2 border-white rounded-lg">
-      <p className="uppercase font-bold">{name}</p>
-      <p className="uppercase font-bold">hp</p>
-      <p className="text-right">{hp}</p>
-    </div>
-  );
-};
-
-export const PlayerMenu = () => {
-  return (
-    <div className="flex flex-col justify-center flex-wrap font-bold text-lg uppercase p-4 h-full">
-      <p>Fight</p>
-      <p>Magic</p>
-      <p>Drink</p>
-      <p>Item</p>
-      <p>Run</p>
-    </div>
-  );
-};
