@@ -20,7 +20,7 @@ function App() {
   });
 
   return (
-    <div className="h-screen flex justify-center items-center bg-black text-white p-4">
+    <div className="h-screen flex justify-center items-center bg-black text-white p-4 uppercase">
       <div className="max-w-6xl border-white border-2 rounded-lg min-w-[570px] w-full h-full max-h-[700px] ml-2 flex">
         <div className="flex flex-col w-full">
           <div
@@ -34,7 +34,9 @@ function App() {
             <SpriteRenderer>{characterSprites}</SpriteRenderer>
           </div>
           <div className="flex flex-1 justify-between border-2 border-red-500 ">
-            <div className="border-2 border-yellow-500 w-[40%]">enemy menu</div>
+            <div className="border-2 border-yellow-500 w-[40%] flex justify-center items-center">
+              <div className="text-4xl">IMP</div>
+            </div>
             <div className="border-2 border-green-500 w-[60%]">
               <PlayerMenu />
             </div>
