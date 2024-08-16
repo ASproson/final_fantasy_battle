@@ -13,8 +13,8 @@ function App() {
 
   const enemySprites = enemyList.map(({ name, img }) => {
     return (
-      <div className="pl-10">
-        <Character key={name} name={name} src={img} />
+      <div className="pl-10" key={name}>
+        <Character name={name} src={img} />
       </div>
     );
   });
