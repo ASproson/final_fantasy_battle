@@ -1,6 +1,6 @@
 import { CharacterSheet } from './components/CharacterSheet';
 import { PlayerMenu } from './components/PlayerMenu';
-import { characterList } from './library/Characters';
+import { characterList, enemyList } from './library/Characters';
 
 function App() {
   const characterSheetList = characterList.map(({ name, hp }) => {
@@ -8,6 +8,10 @@ function App() {
   });
 
   const characterSprites = characterList.map(({ name, img }) => {
+    return <Character key={name} name={name} src={img} />;
+  });
+
+  const enemySprites = enemyList.map(({ name, img }) => {
     return <Character key={name} name={name} src={img} />;
   });
 
@@ -22,14 +26,8 @@ function App() {
             }}
           ></div>
           <div className="flex justify-between py-2 border-2 border-blue-500 min-h-[170px] h-3/5">
-            <div className="flex flex-col justify-center">
-              <div>enemy1</div>
-              <div>enemy2</div>
-              <div>enemy3</div>
-            </div>
-            <div className="flex flex-col justify-center space-y-3 border-2 border-red-500 pr-10">
-              {characterSprites}
-            </div>
+            <SpriteRenderer>{enemySprites}</SpriteRenderer>
+            <SpriteRenderer>{characterSprites}</SpriteRenderer>
           </div>
           <div className="flex flex-1 justify-between border-2 border-red-500 ">
             <div className="border-2 border-yellow-500 w-[40%]">enemy menu</div>
@@ -58,6 +56,17 @@ export const Character = ({ src, name }: CharacterProps) => {
   return (
     <div>
       <img src={src} className="w-20" alt={name} />
+    </div>
+  );
+};
+
+interface SpriteRendererProps {
+  children: React.ReactNode;
+}
+export const SpriteRenderer = ({ children }: SpriteRendererProps) => {
+  return (
+    <div className="flex flex-col justify-center space-y-3 border-2 border-red-500 pr-10">
+      {children}
     </div>
   );
 };
