@@ -16,12 +16,9 @@ function App() {
       <div className="max-w-6xl border-white border-2 rounded-lg min-w-[570px] w-full h-full max-h-[700px] ml-2 flex">
         <div className="flex flex-col w-full">
           <div
-            className="h-[100px]"
+            className="h-[100px] bg-contain"
             style={{
-              backgroundImage: 'url(src/assets/battle-bg.png)',
-              backgroundSize: '100% auto',
-              backgroundPosition: 'right 0px bottom 200px',
-              backgroundAttachment: 'local',
+              backgroundImage: 'url(src/assets/bg-repeat.png)',
             }}
           ></div>
           <div className="flex justify-between py-2 border-2 border-blue-500 min-h-[170px] h-3/5">
