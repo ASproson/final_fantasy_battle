@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="h-screen flex justify-center items-center bg-black text-white p-4 uppercase">
-      <div className="max-w-6xl border-white border-2 rounded-lg w-full h-full max-h-[600px] ml-2 flex overflow-auto relative">
+      <div className="max-w-6xl border-white border-2 rounded-lg w-full h-full max-h-[600px] ml-2 flex overflow-auto">
         <div className="flex flex-col w-full">
           <div
             className="hidden sm:block sm:h-[100px] md:h-[150px] bg-contain"
@@ -69,5 +69,5 @@ export const SpriteRenderer = ({ children }: SpriteRendererProps) => {
 };
 
 export const MenuModal = () => {
-  return <div className="bg-white h-10 w-10 absolute top-0 left-0"></div>;
+  return <div className="absolute h-20 w-20 bg-white"></div>;
 };
